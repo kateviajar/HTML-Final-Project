@@ -1,0 +1,858 @@
+h1, h2, h3, h4{
+  font-family: "Montserrat", sans-serif;
+}
+p, a{
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+body{
+  margin: 0px !important;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto;
+}
+
+/** style header **/
+header{
+  grid-area: header; /**name the area**/
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: solid 2px #c92247;
+
+  position: fixed;
+  top: -100px;
+  left: 0;
+  transition: all .3s;
+}
+header > article{
+  height: 100px;
+  width: auto;
+  flex-grow: 1; /** maximize space of article **/
+}
+header > article > img{
+  height: 100%;
+  width: auto;
+}
+header > nav{
+  padding-right: 30px;
+}
+header > nav > ul{
+  display: flex;
+  list-style: none; /** remove dots **/
+}
+header > nav > ul > li{
+  padding: 0px 20px;
+}
+header > nav > ul > li > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+/* add a hover effect on nav */
+header > nav > ul > li > a:hover{
+  color: #444;
+}
+header > nav > ul > li > a::after{
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #c92247;
+  transition: all .2s linear;
+}
+header > nav > ul > li > a:hover::after{
+  width: 100%;
+}
+/***********************************/
+/** add a class for show/hide header effect by using jQuery **/
+.on{
+  top: 0;
+}
+/***********************************/
+/** style main **/
+main{
+  grid-area: main; /**name the area**/
+}
+
+/*********************/
+/** index.html page **/
+/*********************/
+
+/** style main > masthead **/
+.masthead{
+  background-image: url("../img/masthead.jpg"); /** add background image **/
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.masthead > div{
+  padding: 0% 10%;
+}
+.masthead > div > h1{
+  color: #fff;
+  font-size: 48px;
+  text-align: end;
+  letter-spacing: 5px;
+}
+.masthead > div > h2{
+  color: #fff;
+  font-size: 42px;
+  text-align: end;
+  letter-spacing: 3px;
+}
+/** style main > row_one **/
+.row_one{
+  display: flex;
+  align-items: center;
+  padding: 5% 8%;
+}
+/** style main > row_one > first article contains img **/
+.row_one > article:nth-child(1){
+  height: auto;
+  width: 55%;
+}
+.row_one > article:nth-child(1) > p{
+  position: absolute;
+  z-index: 1;
+  color: #c92247;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px;
+}
+.row_one > article:nth-child(1) > img{
+  height: auto;
+  width: 100%;
+}
+/** style main > row_one > button **/
+.row_one > article:nth-child(1) > div{
+  display: flex;
+  justify-content: center;
+}
+.row_one > article:nth-child(1) > div > button{
+  border: solid 2px #c92247;
+  border-radius: 5px;
+  background-color: #c92247;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  width: 85px;
+}
+/** style main > row_one > second article contains text **/
+.row_one > article:nth-child(2){
+  padding: 0% 3%;
+  width: 45%;
+}
+.row_one > article:nth-child(2) > h3{
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+.row_one > article:nth-child(2) > .subheading{
+  font-size: 28px;
+  color: #c92247;
+  font-weight: bold;
+}
+.row_one > article:nth-child(2) > div{
+  display: flex;
+}
+.row_one > article:nth-child(2) > div > p{
+  padding: 0px 5px;
+  font-size: 20px;
+}
+.row_one > article:nth-child(2) > div > p:nth-child(1){
+  color: #c92247;
+  font-weight: bold;
+}
+.row_one > article:nth-child(2) > div > p:nth-child(2){
+  color: #444;
+  text-decoration: line-through;
+}
+
+/************************/
+/** products.html page **/
+/************************/
+
+/* style main > masthead_products */
+.masthead_products{
+  background-image: url("../img/photo02.jpg"); /* add background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.masthead_products > div{
+  padding: 0% 10%;
+}
+.masthead_products > div > h1{
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.masthead_products > div > h2{
+  color: #fff;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+/* style main > row-one */
+.row-one{
+  display: grid;
+  grid-template-columns: repeat(4, 25% [col-start]);
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  padding: 5% 3%;
+}
+.row-one > article{
+  width: 400px;
+  height: 300px;
+}
+.row-one > article > img{
+  width: 100%;
+  height: 100%;
+}
+/* style main > row-two */
+.row-two{
+  display: flex;
+  justify-content: center;
+  padding: 0% 20%;
+}
+.row-two > article:nth-child(1){
+  padding: 5px 10px;
+  border-top: solid 2px #f2f1f5;
+}
+.row-two > article:nth-child(1) > h3{
+  text-align: center;
+  font-size: 24px;
+}
+.row-two > article:nth-child(1) > p{
+  text-align: center;
+  font-size: 20px;
+  color: #444;
+}
+.row-two > article:nth-child(2){
+  padding: 5px 10px;
+  border-top: solid 2px #f2f1f5;
+}
+/* style main > row-three */
+.row-three{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+.row-three > article > h3{
+  text-align: center;
+  font-size: 24px;
+  border-bottom: solid 2px #f2f1f5;
+}
+
+/***********************/
+/** contact.html page **/
+/***********************/
+
+/* style main > masthead_contact */
+.masthead_contact{
+  display: flex;
+  align-items: flex-end;
+  background-color: #c92247;
+  height: 150px;
+}
+.masthead_contact > div{
+  padding-left: 3%;
+}
+.masthead_contact > div > h1{
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 10px 0px;
+}
+/* style main > rowOne */
+.rowOne{
+  padding: 3% 20%;
+}
+.rowOne > article:nth-child(1) > h2{
+  font-size: 28px;
+}
+.rowOne > article:nth-child(1) > p{
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+.rowOne > article:nth-child(2) > .question{
+  font-weight: bold;
+  cursor: pointer;
+}
+.rowOne > article:nth-child(2) > .question:hover{
+  color: #c92247;
+}
+.rowOne > article:nth-child(2) > .answer{
+  display: none; /*it will be shown if the question is clicked */
+}
+/* style main > rowTwo */
+.rowTwo{
+  padding: 3% 20%;
+}
+.rowTwo > article > h2{
+  font-size: 28px;
+}
+.emailTitle, .phoneTitle{
+  text-align: center;
+  padding: 5px 0px;
+}
+/* style main > rowTwo > form */
+.rowTwo > article > form > div > p > label{
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+.rowTwo > article > form > div > p > input{
+  width: 450px;
+  height: 30px;
+  border: solid 2px #444;
+  font-size: 20px;
+}
+.rowTwo > article > form > div > p > textarea{
+  width: 450px;
+  height: auto;
+  border: solid 2px #444;
+  font-size: 20px;
+}
+.rowTwo > article > form > p > input{
+  font-size: 20px;
+  padding: 5px 10px;
+  background-color: #444;
+  color: #fff;
+  border: solid 2px #f2f1f5;
+  border-radius: 5px;
+}
+.rowTwo > article > form > p > input:hover{
+  background-color: #c92247;
+  transition: all .2s linear;
+  cursor: pointer;
+}
+
+/*********************/
+/** about.html page **/
+/*********************/
+
+/* style main > masthead_about */
+.masthead_about{
+  background-image: url("../img/about4.jpg"); /* add background image */
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.masthead_about > div{
+  padding-left: 10%;
+}
+.masthead_about > div > h1{
+  font-size: 48px;
+  letter-spacing: 5px;
+  color: #f2f1f5;
+}
+.masthead_about > div > h2{
+  font-size: 42px;
+  color: #f2f1f5;
+}
+/* style main > row1 */
+.row1, .row2{
+  padding: 2% 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row1 > article:nth-child(1){
+  width: 70%;
+  padding: 0% 2%;
+}
+.row1 > article:nth-child(1) > img{
+  width: 100%;
+  border-radius: 30% 10%;
+}
+.row1 > article:nth-child(2){
+  padding: 2%;
+}
+.row1 > article:nth-child(2) > h3{
+  font-size: 28px;
+}
+/* style main > row2 */
+.row2 > article > h3{
+  font-size: 28px;
+  text-align: center;
+}
+.row2 > article > p{
+  text-align: center;
+}
+
+/** style footer **/
+footer{
+  grid-area: footer; /**name the area**/
+  display: grid;
+  grid-template-columns: 20% 20% 15% 45%;
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  background-color: #f2f1f5; /**grey color**/
+  align-items: center;
+  justify-items: center;
+  padding: 0% 3%;
+  border-top: solid 2px #c92247;
+}
+footer > div{
+  padding: 0% 2%;
+}
+footer > div > p{
+  font-size: 16px;
+}
+
+/******************/
+/* Responsive CSS */
+/******************/
+@media screen and (max-width: 1690px){
+  /************************/
+  /** products.html page **/
+  /************************/
+  /** row one content **/
+  .row-one{
+    grid-template-columns: repeat(2, 50% [col-start]);
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+    justify-items: center;
+  }
+  .row-one > article{
+    width: 550px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  /***********************/
+  /** contact.html page **/
+  /***********************/
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 28px;
+    letter-spacing: 0px;
+  }
+
+  /*********************/
+  /** about.html page **/
+  /*********************/
+  /** masthead_about content **/
+  .masthead_about > div > h1{
+    font-size: 46px;
+    letter-spacing: 3px;
+  }
+  .masthead_about > div > h2{
+    font-size: 40px;
+  }
+
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  /*********************/
+  /** index.html page **/
+  /*********************/
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+  .masthead > div > h2{
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .masthead > div{
+    padding: 0% 5%;
+  }
+  /** row one content **/
+  .row_one > article:nth-child(1) > p{
+    font-size: 22px;
+  }
+  .row_one > article:nth-child(2) > h3{
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  /************************/
+  /** products.html page **/
+  /************************/
+  /** masthead_products content **/
+  .masthead_products > div > h1{
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+  .masthead_products > div > h2{
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .masthead_products > div{
+    padding: 0% 5%;
+  }
+  /** row one content **/
+  .row-one > article{
+    width: 450px;
+    height: 300px;
+  }
+  /** row two content **/
+  .row-two{
+    padding: 0% 15%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  /*********************/
+  /** index.html page **/
+  /*********************/
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  .masthead > div > h2{
+    font-size: 30px;
+    letter-spacing: 0;
+  }
+  .masthead > div{
+    padding: 0% 3%;
+  }
+  /** row one content **/
+  .row_one > article:nth-child(1) > p{
+    font-size: 20px;
+  }
+  .row_one > article:nth-child(2) > h3{
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    font-size: 18px;
+  }
+  .row_one > article:nth-child(2) > div > p{
+    font-size: 18px;
+  }
+
+  /************************/
+  /** products.html page **/
+  /************************/
+  /** masthead_products content **/
+  .masthead_products > div > h1{
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  .masthead_products > div > h2{
+    font-size: 30px;
+    letter-spacing: 0;
+  }
+  .masthead_products > div{
+    padding: 0% 3%;
+  }
+  /** row one content **/
+  .row-one > article{
+    width: 350px;
+    height: 225px;
+  }
+  /** row two content **/
+  .row-two{
+    padding: 0% 10%;
+  }
+  .row-two > article:nth-child(1) > h3{
+    font-size: 22px;
+  }
+  /** row three content **/
+  .row-three > article > h3{
+    font-size: 22px;
+  }
+
+  /***********************/
+  /** contact.html page **/
+  /***********************/
+  /** masthead_contact content **/
+  .masthead_contact > div > h1{
+    font-size: 24px;
+  }
+  /** Row one content **/
+  .rowOne{
+    padding: 3% 15%;
+  }
+  .rowOne > article:nth-child(1) > h2{
+    font-size: 24px;
+  }
+  .rowOne > article:nth-child(1) > p{
+    font-size: 20px;
+  }
+  /** Row two content **/
+  .rowTwo{
+    padding: 3% 15%;
+  }
+  .rowTwo > article > h2{
+    font-size: 24px;
+  }
+
+  /*********************/
+  /** about.html page **/
+  /*********************/
+  /** masthead_about content **/
+  .masthead_about > div > h1{
+    font-size: 42px;
+    letter-spacing: 2px;
+  }
+  .masthead_about > div > h2{
+    font-size: 36px;
+  }
+  .masthead_about > div{
+    padding-left: 5%;
+  }
+  /**Row one content **/
+  .row1 > article:nth-child(1){
+    width: auto;
+  }
+
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+  footer > div > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  /** header content **/
+  header > nav{
+    padding-right: 20px;
+  }
+  header > nav > ul{
+    padding: 0px;
+  }
+  header > nav > ul > li{
+    padding: 0px 5px;
+  }
+  header > nav > ul > li > a{
+    font-size: 16px;
+  }
+
+  /*********************/
+  /** index.html page **/
+  /*********************/
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 30px;
+    letter-spacing: 0px;
+  }
+  .masthead > div > h2{
+    font-size: 26px;
+    letter-spacing: 0px;
+  }
+  .masthead > div{
+    padding: 0% 2%;
+  }
+  /** row one content **/
+  .row_one{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5%;
+  }
+  .row_one > article:nth-child(1){
+    width: auto;
+  }
+  .row_one > article:nth-child(2){
+    width: auto;
+  }
+  .row_one > article:nth-child(2) > h3{
+    text-align: center;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    text-align: center;
+  }
+  .row_one > article:nth-child(2) > div{
+    justify-content: center;
+  }
+
+  /************************/
+  /** products.html page **/
+  /************************/
+  /** masthead_products content **/
+  .masthead_products > div > h1{
+    font-size: 30px;
+    letter-spacing: 0px;
+  }
+  .masthead_products > div > h2{
+    font-size: 26px;
+    letter-spacing: 0px;
+  }
+  .masthead_products > div{
+    padding: 0% 2%;
+  }
+  /** row one content **/
+  .row-one{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5% 0%;
+    width: 100vw;
+  }
+  .row-one > article{
+    padding: 10px;
+    width: 350px;
+    height: 225px;
+  }
+  /** row two content **/
+  .row-two{
+    padding: 0%;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+  .row-two > article:nth-child(1) > h3{
+    font-size: 20px;
+  }
+  .row-two > article:nth-child(1) > p{
+    font-size: 18px;
+  }
+  /** row three content **/
+  .row-three{
+    padding: 0%;
+    width: 100vw;
+  }
+  .row-three > article > h3{
+    font-size: 20px;
+  }
+  .row-three > article > iframe{
+    width: 400px;
+    height: 220px
+  }
+
+  /***********************/
+  /** contact.html page **/
+  /***********************/
+  /** masthead content **/
+  .masthead_contact{
+    width: 100vw;
+  }
+  /** row one content **/
+  .rowOne{
+    width: 100vw;
+    padding: 3% 0%;
+  }
+  .rowOne > article{
+    padding: 0px 5px;
+  }
+  .rowOne > article:nth-child(1) > h2{
+    font-size: 22px;
+  }
+  .rowOne > article:nth-child(1) > p{
+    font-size: 18px;
+  }
+  /** row two content **/
+  .rowTwo{
+    width: 100vw;
+    padding: 3% 0%;
+  }
+  .rowTwo > article{
+    padding: 0px 5px;
+  }
+  .rowTwo > article > h2{
+    font-size: 22px;
+  }
+  .rowTwo > article > form{
+    padding: 0px 5px;
+  }
+  .rowTwo > article > form > div > p > label{
+    font-size: 20px;
+  }
+  .rowTwo > article > form > div > p > input{
+    width: 350px;
+    height: 20px;
+    font-size: 18px;
+  }
+  .rowTwo > article > form > div > p > textarea{
+    width: 350px;
+    font-size: 18px;
+  }
+  .rowTwo > article > form > p > input{
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  /*********************/
+  /** about.html page **/
+  /*********************/
+  /** masthead_about content **/
+  .masthead_about > div > h1{
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+  .masthead_about > div > h2{
+    font-size: 28px;
+  }
+  .masthead_about > div{
+    padding-left: 2%;
+  }
+  /**Row one content **/
+  .row1{
+    flex-wrap: wrap;
+    padding: 2% 0%;
+    width: 100vw;
+  }
+  .row1 > article:nth-child(2) > h3{
+    font-size: 24px;
+    text-align: center;
+  }
+  /** Row two content **/
+  .row2{
+    padding: 2% 0%;
+    width: 100vw;
+  }
+  .row2 > article > h3{
+    font-size: 24px;
+  }
+  .row2 > article > iframe{
+    width: 360px;
+    height: 270px;
+  }
+
+  /** footer content **/
+  footer{
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+  footer > div > h4{
+    font-size: 14px;
+  }
+  footer > div > p{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 695px){
+  /***********************/
+  /** contact.html page **/
+  /***********************/
+  /** masthead_contact content **/
+  .masthead_contact{
+    height: 200px;
+  }
+}

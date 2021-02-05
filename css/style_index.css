@@ -1,0 +1,322 @@
+h1, h2, h3, h4{
+  font-family: "Montserrat", sans-serif;
+}
+p, a{
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+body{
+  margin: 0px !important;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto;
+}
+
+/** style header **/
+header{
+  grid-area: header; /**name the area**/
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: solid 2px #c92247;
+
+  position: fixed;
+  top: -100px;
+  left: 0;
+  transition: all .3s;
+}
+header > article{
+  height: 100px;
+  width: auto;
+  flex-grow: 1; /** maximize space of article **/
+}
+header > article > img{
+  height: 100%;
+  width: auto;
+}
+header > nav{
+  padding-right: 30px;
+}
+header > nav > ul{
+  display: flex;
+  list-style: none; /** remove dots **/
+}
+header > nav > ul > li{
+  padding: 0px 20px;
+}
+header > nav > ul > li > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+/* add a hover effect on nav */
+header > nav > ul > li > a:hover{
+  color: #444;
+}
+header > nav > ul > li > a::after{
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #c92247;
+  transition: all .2s linear;
+}
+header > nav > ul > li > a:hover::after{
+  width: 100%;
+}
+/***********************************/
+/** add a class for show/hide header effect by using jQuery **/
+.on{
+  top: 0;
+}
+/***********************************/
+/** style main **/
+main{
+  grid-area: main; /**name the area**/
+}
+/** style main > masthead **/
+.masthead{
+  background-image: url("../img/masthead.jpg"); /** add background image **/
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.masthead > div{
+  padding: 0% 10%;
+}
+.masthead > div > h1{
+  color: #fff;
+  font-size: 48px;
+  text-align: end;
+  letter-spacing: 5px;
+}
+.masthead > div > h2{
+  color: #fff;
+  font-size: 42px;
+  text-align: end;
+  letter-spacing: 3px;
+}
+/** style main > row_one **/
+.row_one{
+  display: flex;
+  align-items: center;
+  padding: 5% 8%;
+}
+/** style main > row_one > first article contains img **/
+.row_one > article:nth-child(1){
+  height: auto;
+  width: 55%;
+}
+.row_one > article:nth-child(1) > p{
+  position: absolute;
+  z-index: 1;
+  color: #c92247;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px;
+}
+.row_one > article:nth-child(1) > img{
+  height: auto;
+  width: 100%;
+}
+/** style main > row_one > button **/
+.row_one > article:nth-child(1) > div{
+  display: flex;
+  justify-content: center;
+}
+.row_one > article:nth-child(1) > div > button{
+  border: solid 2px #c92247;
+  border-radius: 5px;
+  background-color: #c92247;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  width: 85px;
+}
+/** style main > row_one > second article contains text **/
+.row_one > article:nth-child(2){
+  padding: 0% 3%;
+  width: 45%;
+}
+.row_one > article:nth-child(2) > h3{
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+.row_one > article:nth-child(2) > .subheading{
+  font-size: 28px;
+  color: #c92247;
+  font-weight: bold;
+}
+.row_one > article:nth-child(2) > div{
+  display: flex;
+}
+.row_one > article:nth-child(2) > div > p{
+  padding: 0px 5px;
+  font-size: 20px;
+}
+.row_one > article:nth-child(2) > div > p:nth-child(1){
+  color: #c92247;
+  font-weight: bold;
+}
+.row_one > article:nth-child(2) > div > p:nth-child(2){
+  color: #444;
+  text-decoration: line-through;
+}
+/** style footer **/
+footer{
+  grid-area: footer; /**name the area**/
+  display: grid;
+  grid-template-columns: 20% 20% 15% 45%;
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  background-color: #f2f1f5; /**grey color**/
+  align-items: center;
+  justify-items: center;
+  padding: 0% 3%;
+  border-top: solid 2px #c92247;
+}
+footer > div{
+  padding: 0% 2%;
+}
+footer > div > p{
+  font-size: 16px;
+}
+
+/******************/
+/* Responsive CSS */
+/******************/
+@media screen and (max-width: 1300px) {
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+  .masthead > div > h2{
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .masthead > div{
+    padding: 0% 5%;
+  }
+  /** row one content **/
+  .row_one > article:nth-child(1) > p{
+    font-size: 22px;
+  }
+  .row_one > article:nth-child(2) > h3{
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    font-size: 20px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  .masthead > div > h2{
+    font-size: 30px;
+    letter-spacing: 0;
+  }
+  .masthead > div{
+    padding: 0% 3%;
+  }
+  /** row one content **/
+  .row_one > article:nth-child(1) > p{
+    font-size: 20px;
+  }
+  .row_one > article:nth-child(2) > h3{
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    font-size: 18px;
+  }
+  .row_one > article:nth-child(2) > div > p{
+    font-size: 18px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+  footer > div > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  /** header content **/
+  header > nav{
+    padding-right: 20px;
+  }
+  header > nav > ul{
+    padding: 0px;
+  }
+  header > nav > ul > li{
+    padding: 0px 5px;
+  }
+  header > nav > ul > li > a{
+    font-size: 16px;
+  }
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 30px;
+    letter-spacing: 0px;
+  }
+  .masthead > div > h2{
+    font-size: 26px;
+    letter-spacing: 0px;
+  }
+  .masthead > div{
+    padding: 0% 2%;
+  }
+  /** row one content **/
+  .row_one{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5%;
+  }
+  .row_one > article:nth-child(1){
+    width: auto;
+  }
+  .row_one > article:nth-child(2){
+    width: auto;
+  }
+  .row_one > article:nth-child(2) > h3{
+    text-align: center;
+  }
+  .row_one > article:nth-child(2) > .subheading{
+    text-align: center;
+  }
+  .row_one > article:nth-child(2) > div{
+    justify-content: center;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+  footer > div > h4{
+    font-size: 14px;
+  }
+  footer > div > p{
+    font-size: 12px;
+  }
+}

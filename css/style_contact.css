@@ -1,0 +1,306 @@
+h1, h2, h3, h4{
+  font-family: "Montserrat", sans-serif;
+}
+p, a{
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+body{
+  margin: 0px !important;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto;
+}
+/* style header */
+header{
+  grid-area: header; /*name the area*/
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: solid 2px #c92247;
+
+  position: fixed;
+  top: -100px;
+  left: 0;
+  transition: all .3s;
+}
+header > article{
+  height: 100px;
+  width: auto;
+  flex-grow: 1; /* maximize space of article */
+}
+header > article > img{
+  height: 100%;
+  width: auto;
+}
+header > nav{
+  padding-right: 30px;
+}
+header > nav > ul{
+  display: flex;
+  list-style: none; /* remove dots */
+}
+header > nav > ul > li{
+  padding: 0px 20px;
+}
+header > nav > ul > li > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+/* add a hover effect on nav */
+header > nav > ul > li > a:hover{
+  color: #444;
+}
+header > nav > ul > li > a::after{
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #c92247;
+  transition: all .2s linear;
+}
+header > nav > ul > li > a:hover::after{
+  width: 100%;
+}
+/***********************************/
+/* add a class for show/hide header effect by using jQuery */
+.on{
+  top: 0;
+}
+/***********************************/
+/* style main */
+main{
+  grid-area: main; /*name the area*/
+}
+/* style main > masthead */
+.masthead{
+  display: flex;
+  align-items: flex-end;
+  background-color: #c92247;
+  height: 150px;
+}
+.masthead > div{
+  padding-left: 3%;
+}
+.masthead > div > h1{
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 10px 0px;
+}
+/* style main > rowOne */
+.rowOne{
+  padding: 3% 20%;
+}
+.rowOne > article:nth-child(1) > h2{
+  font-size: 28px;
+}
+.rowOne > article:nth-child(1) > p{
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+.rowOne > article:nth-child(2) > .question{
+  font-weight: bold;
+  cursor: pointer;
+}
+.rowOne > article:nth-child(2) > .question:hover{
+  color: #c92247;
+}
+.rowOne > article:nth-child(2) > .answer{
+  display: none; /*it will be shown if the question is clicked */
+}
+/* style main > rowTwo */
+.rowTwo{
+  padding: 3% 20%;
+}
+.rowTwo > article > h2{
+  font-size: 28px;
+}
+.emailTitle, .phoneTitle{
+  text-align: center;
+  padding: 5px 0px;
+}
+/* style main > rowTwo > form */
+.rowTwo > article > form > div > p > label{
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+.rowTwo > article > form > div > p > input{
+  width: 450px;
+  height: 30px;
+  border: solid 2px #444;
+  font-size: 20px;
+}
+.rowTwo > article > form > div > p > textarea{
+  width: 450px;
+  height: auto;
+  border: solid 2px #444;
+  font-size: 20px;
+}
+.rowTwo > article > form > p > input{
+  font-size: 20px;
+  padding: 5px 10px;
+  background-color: #444;
+  color: #fff;
+  border: solid 2px #f2f1f5;
+  border-radius: 5px;
+}
+.rowTwo > article > form > p > input:hover{
+  background-color: #c92247;
+  transition: all .2s linear;
+  cursor: pointer;
+}
+/* style footer */
+footer{
+  grid-area: footer; /*name the area*/
+  display: grid;
+  grid-template-columns: 20% 20% 15% 45%;
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  background-color: #f2f1f5; /*grey color*/
+  align-items: center;
+  justify-items: center;
+  padding: 0% 3%;
+  border-top: solid 2px #c92247;
+}
+footer > div{
+  padding: 0% 2%;
+}
+footer > div > p{
+  font-size: 16px;
+}
+
+/******************/
+/* Responsive CSS */
+/******************/
+@media screen and (max-width: 1440px){
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 28px;
+    letter-spacing: 0px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 24px;
+  }
+  /** Row one content **/
+  .rowOne{
+    padding: 3% 15%;
+  }
+  .rowOne > article:nth-child(1) > h2{
+    font-size: 24px;
+  }
+  .rowOne > article:nth-child(1) > p{
+    font-size: 20px;
+  }
+  /** Row two content **/
+  .rowTwo{
+    padding: 3% 15%;
+  }
+  .rowTwo > article > h2{
+    font-size: 24px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+  footer > div > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  /** header content **/
+  header > nav{
+    padding-right: 20px;
+  }
+  header > nav > ul{
+    padding: 0px;
+  }
+  header > nav > ul > li{
+    padding: 0px 5px;
+  }
+  header > nav > ul > li > a{
+    font-size: 16px;
+  }
+  /** masthead content **/
+  .masthead{
+    width: 100vw;
+  }
+  /** row one content **/
+  .rowOne{
+    width: 100vw;
+    padding: 3% 0%;
+  }
+  .rowOne > article{
+    padding: 0px 5px;
+  }
+  .rowOne > article:nth-child(1) > h2{
+    font-size: 22px;
+  }
+  .rowOne > article:nth-child(1) > p{
+    font-size: 18px;
+  }
+  /** row two content **/
+  .rowTwo{
+    width: 100vw;
+    padding: 3% 0%;
+  }
+  .rowTwo > article{
+    padding: 0px 5px;
+  }
+  .rowTwo > article > h2{
+    font-size: 22px;
+  }
+  .rowTwo > article > form{
+    padding: 0px 5px;
+  }
+  .rowTwo > article > form > div > p > label{
+    font-size: 20px;
+  }
+  .rowTwo > article > form > div > p > input{
+    width: 350px;
+    height: 20px;
+    font-size: 18px;
+  }
+  .rowTwo > article > form > div > p > textarea{
+    width: 350px;
+    font-size: 18px;
+  }
+  .rowTwo > article > form > p > input{
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+  footer > div > h4{
+    font-size: 14px;
+  }
+  footer > div > p{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 695px){
+  /** masthead content **/
+  .masthead{
+    height: 200px;
+  }
+}

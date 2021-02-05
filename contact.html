@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Project - Contact</title>
+  <meta name="description" content="Final Project - contact">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- link to style sheet -->
+  <link rel="stylesheet" href="./css/style.css"/>
+  <!-- add font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- link to javascript -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="./js/format_contact.js"></script>
+</head>
+<body>
+  <!-- add header -->
+  <header id="navigation"></header>
+  <main>
+    <!-- masthead for contains heading -->
+    <section class="masthead_contact">
+      <div>
+        <h1>We Provide Best Services For Every Customers</h1>
+      </div>
+    </section>
+
+    <!-- Row one contains Frequently Q&A -->
+    <section id="rowOne" class="rowOne">
+      <article>
+        <h2>CONTACT US</h2>
+        <p>Most Frequently Asked Questions</p>
+      </article>
+      <article>
+        <p id="q1" class="question">Q: How to check online order status?</p>
+        <p id="a1" class="answer">A: For customers with an account, you may login to your account, check the order status and tracking number under your account page. For guest checkout orders, you may check order status on Manage Order. In addition, all orders shipped will have tracking number email to customer.</p>
+        <p id="q2" class="question">Q. How to cancel an online order?</p>
+        <p id="a2" class="answer">A. For customers with an account, you may login to your account, when your order is eligible for order cancellation, the cancel order request button will be shown. For guest checkout, cancel order request would be available under Manage Order if eligible. In the event, cancel order request cannot be accommodated, refer to return for refund. Once an order has been placed, it cannot be modified or changed.</p>
+        <p id="q3" class="question">Q. When will the online order be ready for store pickup?</p>
+        <p id="a3" class="answer">A. Order notification on pickup is ready will be email to customer. Check your spam and junk folder. The customer will have 3 business days to pickup, after that period the order will be automatically cancelled.</p>
+        <p id="q4" class="question">Q. What is special order online item?</p>
+        <p id="a4" class="answer">A. Items that are not in-stock at our online store, than it will be considered a special order item.</p>
+      </article>
+    </section>
+
+    <!-- Row two contains a form -->
+    <section id="rowTwo" class="rowTwo">
+      <article>
+        <h2>Still looking for an answer?</h2>
+        <p>We’re here to help. Please contact us and we’ll make sure you get the information you need.</p>
+        <div class="phoneTitle">
+          <img src="./img/icon_call.png" alt="call icon">
+          <p>Phone# 123-123-1234</p>
+          <p>Mon - Sat: 8AM - 12AM EST</p>
+        </div>
+        <div class="emailTitle">
+          <img src="./img/icon_email.png" alt="email icon">
+          <p>E-mail: LetsBuy@support.com.ca</p>
+          <p>Please note: our response time is 5 to 7 business days.</p>
+        </div>
+        <form>
+          <div>
+            <p><label>Full Name</label></p>
+            <p><input type="text" name="name"></p>
+          </div>
+          <div>
+            <p><label>E-mail</label></p>
+            <p><input type="email" name="email"></p>
+          </div>
+          <div>
+            <p><label>Message</label></p>
+            <p><textarea name="message" rows="5" cols="50"></textarea></p>
+          </div>
+          <p><input type="submit" name="submit" value="Submit"></p>
+        </form>
+      </article>
+    </section>
+  </main>
+  <!-- add footer -->
+  <footer id="footer"></footer>
+</body>
+</html>

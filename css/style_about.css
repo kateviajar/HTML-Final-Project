@@ -1,0 +1,247 @@
+h1, h2, h3, h4{
+  font-family: "Montserrat", sans-serif;
+}
+p, a{
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+body{
+  margin: 0px !important;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto;
+}
+/* style header */
+header{
+  grid-area: header; /*name the area*/
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: solid 2px #c92247;
+
+  position: fixed;
+  top: -100px;
+  left: 0;
+  transition: all .3s;
+}
+header > article{
+  height: 100px;
+  width: auto;
+  flex-grow: 1; /* maximize space of article */
+}
+header > article > img{
+  height: 100%;
+  width: auto;
+}
+header > nav{
+  padding-right: 30px;
+}
+header > nav > ul{
+  display: flex;
+  list-style: none; /* remove dots */
+}
+header > nav > ul > li{
+  padding: 0px 20px;
+}
+header > nav > ul > li > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+/* add a hover effect on nav */
+header > nav > ul > li > a:hover{
+  color: #444;
+}
+header > nav > ul > li > a::after{
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #c92247;
+  transition: all .2s linear;
+}
+header > nav > ul > li > a:hover::after{
+  width: 100%;
+}
+/***********************************/
+/* add a class for show/hide header effect by using jQuery */
+.on{
+  top: 0;
+}
+/***********************************/
+/* style main */
+main{
+  grid-area: main; /*name the area*/
+}
+/* style main > masthead */
+.masthead{
+  background-image: url("../img/about4.jpg"); /* add background image */
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.masthead > div{
+  padding-left: 10%;
+}
+.masthead > div > h1{
+  font-size: 48px;
+  letter-spacing: 5px;
+  color: #f2f1f5;
+}
+.masthead > div > h2{
+  font-size: 42px;
+  color: #f2f1f5;
+}
+/* style main > row1 */
+.row1, .row2{
+  padding: 2% 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row1 > article:nth-child(1){
+  width: 70%;
+  padding: 0% 2%;
+}
+.row1 > article:nth-child(1) > img{
+  width: 100%;
+  border-radius: 30% 10%;
+}
+.row1 > article:nth-child(2){
+  padding: 2%;
+}
+.row1 > article:nth-child(2) > h3{
+  font-size: 28px;
+}
+/* style main > row2 */
+.row2 > article > h3{
+  font-size: 28px;
+  text-align: center;
+}
+.row2 > article > p{
+  text-align: center;
+}
+/* style footer */
+footer{
+  grid-area: footer; /*name the area*/
+  display: grid;
+  grid-template-columns: 20% 20% 15% 45%;
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  background-color: #f2f1f5; /*grey color*/
+  align-items: center;
+  justify-items: center;
+  padding: 0% 3%;
+  border-top: solid 2px #c92247;
+}
+footer > div{
+  padding: 0% 2%;
+}
+footer > div > p{
+  font-size: 16px;
+}
+/******************/
+/* Responsive CSS */
+/******************/
+@media screen and (max-width: 1440px){
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 46px;
+    letter-spacing: 3px;
+  }
+  .masthead > div > h2{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 42px;
+    letter-spacing: 2px;
+  }
+  .masthead > div > h2{
+    font-size: 36px;
+  }
+  .masthead > div{
+    padding-left: 5%;
+  }
+  /**Row one content **/
+  .row1 > article:nth-child(1){
+    width: auto;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: 25% 25% 20% auto;
+    padding: 0% 2%;
+  }
+  footer > div > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  /** header content **/
+  header > nav{
+    padding-right: 20px;
+  }
+  header > nav > ul{
+    padding: 0px;
+  }
+  header > nav > ul > li{
+    padding: 0px 5px;
+  }
+  header > nav > ul > li > a{
+    font-size: 16px;
+  }
+  /** masthead content **/
+  .masthead > div > h1{
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+  .masthead > div > h2{
+    font-size: 28px;
+  }
+  .masthead > div{
+    padding-left: 2%;
+  }
+  /**Row one content **/
+  .row1{
+    flex-wrap: wrap;
+    padding: 2% 0%;
+    width: 100vw;
+  }
+  .row1 > article:nth-child(2) > h3{
+    font-size: 24px;
+    text-align: center;
+  }
+  /** Row two content **/
+  .row2{
+    padding: 2% 0%;
+    width: 100vw;
+  }
+  .row2 > article > h3{
+    font-size: 24px;
+  }
+  .row2 > article > iframe{
+    width: 360px;
+    height: 270px;
+  }
+  /** footer content **/
+  footer{
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+  footer > div > h4{
+    font-size: 14px;
+  }
+  footer > div > p{
+    font-size: 12px;
+  }
+}
